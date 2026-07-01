@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ============================================================
+  about.html — Example of a second page
+  ============================================================
+  This page exists mainly to show you the pattern for adding
+  pages: same header, same footer, different <main> content.
+
+  To create a new page, copy this file, rename it, and:
+  1. Update the <title> and <meta name="description">.
+  2. Replace the content inside <main>.
+  3. Add a nav link to the new page in EVERY html file.
+  4. Move class="is-active" to the correct nav link.
+  ============================================================
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About — [Your Name]</title>
+  <meta name="description" content="[A sentence about your background.]">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER — keep identical to index.html, except "is-active" -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-name" href="index.html">[Your Name]</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="is-active">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="intro">
+      <h1>About</h1>
+      <p>
+        [A longer version of your story. Where you're from, what you've done,
+        what you're doing now. Two to four short paragraphs read better than
+        one long block of text.]
+      </p>
+      <p>
+        [Second paragraph.]
+      </p>
+    </section>
+
+    <!-- OPTIONAL: a portrait photo.
+         Put the file in assets/images/ and uncomment this block.
+         The "alt" text describes the image for screen readers
+         and shows if the image fails to load.
+
+    <section>
+      <img class="portrait" src="assets/images/portrait.jpg"
+           alt="Portrait of [Your Name]">
+    </section>
+    -->
+
+    <!-- OPTIONAL: a CV/résumé download.
+         Put the PDF in assets/files/ and uncomment:
+
+    <section>
+      <h2>Résumé</h2>
+      <p><a href="assets/files/cv.pdf">Download my CV (PDF)</a></p>
+    </section>
+    -->
+
+  </main>
+
+  <!-- FOOTER — keep identical to index.html -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 [Your Name] · <a href="https://github.com/yourusername/yourrepo">Source on GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

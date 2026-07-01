@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ============================================================
+  index.html — Homepage
+  ============================================================
+  This is the front page of your personal website.
+
+  HOW THIS FILE IS ORGANISED
+  1. <head>   — metadata, page title, stylesheet link
+  2. <header> — your name + site navigation (same on every page)
+  3. <main>   — the actual page content, split into <section>s
+  4. <footer> — copyright / small links (same on every page)
+
+  ADDING A NEW PAGE (e.g. projects.html)
+  1. Copy this file (or about.html) and rename it.
+  2. Change the <title>, the <h1>/intro, and the content in <main>.
+  3. Add a link to it in the <nav> below — on EVERY page,
+     so the menu stays consistent across the site.
+  4. Move the class "is-active" in the nav to mark the current page.
+
+  Anything written like [THIS] is a placeholder for you to replace.
+  ============================================================
+-->
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the site scale properly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Shown in the browser tab and in search results -->
+  <title>[Your Name] — Personal Website</title>
+
+  <!-- Short description used by search engines and link previews -->
+  <meta name="description" content="[One sentence about who you are and what you do.]">
+
+  <!-- The single stylesheet for the whole site -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Optional: a favicon (small icon in the browser tab).
+       Put a file called favicon.png in assets/images/ and uncomment:
+  <link rel="icon" href="assets/images/favicon.png">
+  -->
+</head>
+
+<body>
+
+  <!-- ==========================================================
+       HEADER — appears identically on every page.
+       If you edit it here, copy the change to every other page.
+       ========================================================== -->
+  <header class="site-header">
+    <div class="wrap">
+      <!-- Your name acts as the site logo and links home -->
+      <a class="site-name" href="index.html">[Your Name]</a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <!-- "is-active" marks the page the visitor is currently on -->
+        <a href="index.html" class="is-active">Home</a>
+        <a href="about.html">About</a>
+        <!-- Add more pages here, e.g.:
+        <a href="projects.html">Projects</a>
+        <a href="writing.html">Writing</a>
+        -->
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       MAIN CONTENT — everything unique to this page lives here.
+       ========================================================== -->
+  <main class="wrap">
+
+    <!-- INTRO / HERO — the first thing visitors read -->
+    <section class="intro">
+      <h1>[Your Name]</h1>
+      <p class="intro-tagline">[What you do, in one line — e.g. "Software engineer in Berlin" or "Photographer &amp; writer".]</p>
+      <p>
+        [Two or three sentences introducing yourself. Who you are, what you
+        care about, and what people will find on this site. Keep it human —
+        write it the way you would say it.]
+      </p>
+    </section>
+
+    <!-- WHAT I DO — a short overview section.
+         Duplicate the <section> block to add more sections. -->
+    <section>
+      <h2>What I do</h2>
+      <p>
+        [A paragraph about your work, studies, or interests. You can also
+        delete this section, rename it, or split it into several sections —
+        each &lt;section&gt; with an &lt;h2&gt; renders the same way.]
+      </p>
+    </section>
+
+    <!-- SELECTED WORK / PROJECTS — an example list layout.
+         Each <article> is one item; copy-paste to add more. -->
+    <section>
+      <h2>Selected work</h2>
+
+      <article class="item">
+        <h3><a href="#">[Project or achievement title]</a></h3>
+        <p class="item-meta">[Year · role or context, e.g. "2025 · Side project"]</p>
+        <p>[One or two sentences describing it and why it matters.]</p>
+      </article>
+
+      <article class="item">
+        <h3><a href="#">[Another project]</a></h3>
+        <p class="item-meta">[Year · context]</p>
+        <p>[Short description.]</p>
+      </article>
+    </section>
+
+    <!-- CONTACT — how to reach you -->
+    <section>
+      <h2>Contact</h2>
+      <p>
+        The best way to reach me is by email at
+        <a href="mailto:you@example.com">you@example.com</a>.
+        You can also find me on
+        <a href="https://github.com/yourusername">GitHub</a>
+        <!-- Add more, e.g. LinkedIn, Mastodon, Instagram … -->.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       FOOTER — appears identically on every page.
+       ========================================================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 [Your Name] · <a href="https://github.com/yourusername/yourrepo">Source on GitHub</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
