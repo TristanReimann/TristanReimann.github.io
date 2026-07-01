@@ -1,33 +1,40 @@
 # Personal Website
 
-A small, dependency-free static website. No build tools, no frameworks —
-just HTML and CSS you can edit directly and host for free on GitHub Pages
-under your own domain.
+A single-page personal homepage in the classic academic style: photo,
+short bio, social links, news, selected work, and an experience timeline.
+No build tools, no frameworks, nothing to install — just HTML and CSS you
+edit directly, hosted for free on GitHub Pages under your own domain.
 
 ## Folder structure
 
 ```
 .
-├── index.html          Homepage
-├── about.html          Example second page (copy this to add pages)
-├── 404.html            Shown for URLs that don't exist
+├── index.html          The whole site (one page, five sections)
+├── 404.html            Shown automatically for URLs that don't exist
 ├── css/
-│   └── style.css       The single stylesheet for the whole site
+│   └── style.css       The single stylesheet, organised by section
 ├── js/                 Empty — for scripts if you ever need them
 ├── assets/
-│   ├── images/         Photos, favicon, etc.
-│   └── files/          Downloads, e.g. your CV as a PDF
+│   ├── images/         Your portrait, project thumbnails, favicon
+│   └── files/          Downloads, e.g. cv.pdf
 └── README.md           This file
 ```
 
 ## Getting started
 
-1. Open `index.html` and `about.html` and replace every `[placeholder]`
-   with your own information.
-2. Optionally tweak the colors and fonts at the top of `css/style.css`
-   (section "1. Design tokens") — one change updates the whole site.
-3. Preview locally by simply double-clicking `index.html`, or run a tiny
-   local server from the project folder:
+1. Open `index.html` and replace every `[placeholder]` with your own
+   information. Delete sections or entries you don't need — the layout
+   adapts.
+2. Add your photo: put a roughly square image (e.g. 600×600 px) into
+   `assets/images/` and change the `<img src=...>` in the hero from the
+   placeholder SVG to your file.
+3. Trim the social links: keep the ones you use, delete the rest.
+   Each is a self-contained `<a class="chip">` block.
+4. Optionally tune the look in `css/style.css`, section
+   "1. Design tokens" — colors, fonts, and sizes all live there, and one
+   change restyles the whole site.
+5. Preview by double-clicking `index.html`, or run a tiny local server
+   from the project folder:
 
    ```
    python3 -m http.server
@@ -35,53 +42,45 @@ under your own domain.
 
    then open http://localhost:8000
 
-## Adding a new page
+## Growing the site later
 
-1. Copy `about.html` and rename it, e.g. `projects.html`.
-2. Change its `<title>`, `<meta name="description">` and the content
-   inside `<main>`.
-3. Add a link to the new page in the `<nav>` of **every** HTML file, so
-   the menu stays identical across the site.
-4. Move `class="is-active"` in each file's nav to whichever link matches
-   that page.
-
-That's the entire scaling model: one HTML file per page, one shared
-stylesheet. It stays fast and simple at 3 pages or 30.
+- **More entries** in News, Selected work, or Experience: copy-paste one
+  existing `<li>` / `<article>` block and edit it.
+- **A whole new section**: duplicate any `<section>` in `index.html`,
+  give it a new `id` and `<h2>` — the section styling is generic.
+- **A separate page** (e.g. `photos.html`): copy `index.html`, keep the
+  `<head>` and footer, replace the content, and link to it from the bio
+  or a social chip. Every page shares `css/style.css`.
 
 ## Hosting on GitHub Pages
 
-1. Create a new **public** repository on GitHub
-   (e.g. `yourusername/website`) and push these files to it.
-   Alternatively, name the repo `yourusername.github.io` — then it is
-   automatically served at that address.
-2. In the repository, go to **Settings → Pages**.
+1. Create a new **public** repository on GitHub and push these files.
+   If you name the repo `yourusername.github.io`, the site is served at
+   exactly that address.
+2. In the repo, go to **Settings → Pages**.
 3. Under **Build and deployment**, set Source to **Deploy from a branch**,
-   choose the `main` branch and the `/ (root)` folder, and save.
-4. After a minute or two your site is live at
-   `https://yourusername.github.io/website/` (or
-   `https://yourusername.github.io/` for the special repo name).
-
-Every `git push` to `main` automatically republishes the site.
+   pick the `main` branch and the `/ (root)` folder, and save.
+4. After a minute or two the site is live. Every `git push` to `main`
+   republishes it automatically.
 
 ## Connecting your own domain
 
-1. Still in **Settings → Pages**, enter your domain (e.g. `example.com`
-   or `www.example.com`) under **Custom domain** and save. GitHub will
-   create a file called `CNAME` in the repo — keep it, it must stay there.
+1. In **Settings → Pages**, enter your domain (e.g. `example.com` or
+   `www.example.com`) under **Custom domain** and save. GitHub creates a
+   `CNAME` file in the repo — keep it there.
 2. At your domain registrar, add DNS records:
-   - For a subdomain like `www.example.com`: a **CNAME** record pointing
+   - Subdomain like `www.example.com`: a **CNAME** record pointing
      `www` → `yourusername.github.io`
-   - For the bare/apex domain `example.com`: **A** records pointing to
-     GitHub Pages' IP addresses (listed in GitHub's docs under
-     "Managing a custom domain for your GitHub Pages site" — check there
-     for the current values rather than copying them from elsewhere).
-3. Wait for DNS to propagate (minutes to a few hours), then back in
-   **Settings → Pages** tick **Enforce HTTPS** once it becomes available.
+   - Bare/apex domain `example.com`: **A** records pointing to GitHub
+     Pages' IP addresses — take the current values from GitHub's own
+     docs ("Managing a custom domain for your GitHub Pages site").
+3. Once DNS has propagated (minutes to a few hours), tick
+   **Enforce HTTPS** in **Settings → Pages**.
 
 ## Tips
 
-- Keep image files small (under ~300 KB) so the site stays fast.
-- Every image needs an `alt` attribute describing it — good for
-  accessibility and for search engines.
-- The site works with no JavaScript at all. Only add scripts to `js/`
-  if a feature genuinely needs them.
+- Keep images small (under ~300 KB each) so the page stays fast.
+- Give every image a meaningful `alt` text — good for accessibility
+  and search engines.
+- The site needs no JavaScript at all; only add scripts to `js/` if a
+  feature truly requires them.
