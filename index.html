@@ -3,15 +3,15 @@
 <!--
   ============================================================
   index.html — Single-page personal homepage
+  Design modelled on the classic academic homepage template.
   ============================================================
   Layout (top to bottom):
 
-  1. HERO        — bio on the left, photo on the right,
-                   social links underneath the bio
-  2. NEWS        — short dated updates
-  3. SELECTED WORK — projects / publications / things you made
-  4. EXPERIENCE  — education & jobs as a timeline
-  5. FOOTER
+  1. HERO           — bio on the left, circular photo on the
+                       right, social links underneath the bio
+  2. SELECTED WORK  — projects, as thumbnail-left/text-right rows
+  3. EXPERIENCE     — education & jobs, as logo-left/text-right rows
+  4. FOOTER
   ============================================================
 -->
 <head>
@@ -28,14 +28,9 @@
 
 <body>
 
-<!-- HEADER — keep identical to about.html, except "is-active" -->
 <header class="site-header">
   <div class="wrap">
     <a class="site-name" href="index.html">Tristan Reimann</a>
-    <nav class="site-nav" aria-label="Main navigation">
-      <a href="index.html" class="is-active">Home</a>
-      <a href="about.html">About</a>
-    </nav>
   </div>
 </header>
 
@@ -109,34 +104,11 @@
 
 
   <!-- ==========================================================
-       2. NEWS — short dated updates, newest first.
-       Each update is one <li>: a <time> tag + text.
-       ========================================================== -->
-  <section id="news">
-    <h2>News</h2>
-    <ul class="news-list">
-      <li>
-        <time datetime="2026-06">Jun 2026</time>
-        <p>[Something recent — started a new job, launched a project, gave a talk…]</p>
-      </li>
-      <li>
-        <time datetime="2026-03">Mar 2026</time>
-        <p>[Another update. Emojis are welcome here if that's your style. 🎉]</p>
-      </li>
-      <li>
-        <time datetime="2025-11">Nov 2025</time>
-        <p>[Older update.]</p>
-      </li>
-    </ul>
-  </section>
+       2. SELECTED WORK — projects, publications, or anything
+       you've made. Each <div class="entry-row"> is one entry:
+       a square thumbnail on the left, text on the right.
 
-
-  <!-- ==========================================================
-       3. SELECTED WORK — projects, publications, or anything
-       you've made. Each <article class="work"> is one entry:
-       a small thumbnail on the left, text on the right.
-
-       Thumbnail: put an image (~480x360px, 4:3) in assets/images/
+       Thumbnail: put an image (~480x480px, square) in assets/images/
        and point the <img> at it. Until then a neutral placeholder
        block is shown via the "thumb-empty" class — once you add a
        real image, remove that class and uncomment the <img>.
@@ -144,71 +116,90 @@
   <section id="work">
     <h2>Selected work</h2>
 
-    <article class="work">
-      <div class="work-thumb thumb-empty">
+    <div class="entry-row">
+      <div class="entry-thumb thumb-empty">
         <!-- <img src="assets/images/project1.jpg" alt="[What the image shows]"> -->
       </div>
-      <div class="work-body">
-        <h3><a href="#">[Project title]</a></h3>
-        <p class="work-meta">[2026 · e.g. "Open source" / "Client work" / conference name]</p>
+      <div class="entry-body">
+        <a href="#" class="entry-title">[Project title]</a>
+        <p class="entry-meta">[2026 · e.g. "Open source" / "Client work" / conference name]</p>
         <p>[One or two sentences: what it is and why it's interesting.]</p>
-        <p class="work-links">
+        <p class="entry-links">
           <a href="#">website</a> / <a href="#">code</a> / <a href="#">write-up</a>
         </p>
       </div>
-    </article>
+    </div>
 
-    <article class="work">
-      <div class="work-thumb thumb-empty"></div>
-      <div class="work-body">
-        <h3><a href="#">[Another project]</a></h3>
-        <p class="work-meta">[2025 · context]</p>
+    <div class="entry-row">
+      <div class="entry-thumb thumb-empty"></div>
+      <div class="entry-body">
+        <a href="#" class="entry-title">[Another project]</a>
+        <p class="entry-meta">[2025 · context]</p>
         <p>[Short description.]</p>
-        <p class="work-links"><a href="#">website</a> / <a href="#">code</a></p>
+        <p class="entry-links"><a href="#">website</a> / <a href="#">code</a></p>
       </div>
-    </article>
+    </div>
 
-    <article class="work">
-      <div class="work-thumb thumb-empty"></div>
-      <div class="work-body">
-        <h3><a href="#">[A third one]</a></h3>
-        <p class="work-meta">[2024 · context]</p>
+    <div class="entry-row">
+      <div class="entry-thumb thumb-empty"></div>
+      <div class="entry-body">
+        <a href="#" class="entry-title">[A third one]</a>
+        <p class="entry-meta">[2024 · context]</p>
         <p>[Short description.]</p>
       </div>
-    </article>
+    </div>
 
   </section>
 
 
   <!-- ==========================================================
-       4. EXPERIENCE — education and work as a simple timeline.
-       Each <li> is one station; newest first.
+       3. EXPERIENCE — education and work as logo-left/text-right
+       rows, newest first. Each <div class="entry-row"> is one
+       station. Swap the placeholder logo for the real institution/
+       employer mark in assets/images/ when you have one.
        ========================================================== -->
   <section id="experience">
     <h2>Experience</h2>
-    <ol class="timeline">
-      <li>
-        <p class="timeline-when">[2024 – now]</p>
-        <h3>[Role or degree] · <a href="#">[Company / University]</a></h3>
+
+    <div class="entry-row">
+      <div class="entry-logo">
+        <img src="assets/images/logo-placeholder.svg" alt="[Company / University] logo">
+      </div>
+      <div class="entry-body">
+        <a href="#" class="entry-title">[Role or degree] · [Company / University]</a>
+        <p class="entry-meta">[2024 – now]</p>
         <p>[Optional one-liner about what you do/did there. Delete if not needed.]</p>
-      </li>
-      <li>
-        <p class="timeline-when">[2021 – 2024]</p>
-        <h3>[Previous role] · <a href="#">[Company]</a></h3>
+      </div>
+    </div>
+
+    <div class="entry-row">
+      <div class="entry-logo">
+        <img src="assets/images/logo-placeholder.svg" alt="[Company] logo">
+      </div>
+      <div class="entry-body">
+        <a href="#" class="entry-title">[Previous role] · [Company]</a>
+        <p class="entry-meta">[2021 – 2024]</p>
         <p>[Optional description.]</p>
-      </li>
-      <li>
-        <p class="timeline-when">[2017 – 2021]</p>
-        <h3>[Degree] · <a href="#">[University]</a></h3>
-      </li>
-    </ol>
+      </div>
+    </div>
+
+    <div class="entry-row">
+      <div class="entry-logo">
+        <img src="assets/images/logo-placeholder.svg" alt="[University] logo">
+      </div>
+      <div class="entry-body">
+        <a href="#" class="entry-title">[Degree] · [University]</a>
+        <p class="entry-meta">[2017 – 2021]</p>
+      </div>
+    </div>
+
   </section>
 
 </main>
 
 
 <!-- ==========================================================
-     5. FOOTER
+     4. FOOTER
      ========================================================== -->
 <footer class="site-footer">
   <div class="wrap">

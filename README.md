@@ -1,21 +1,26 @@
 # Personal Website
 
-A single-page personal homepage in the classic academic style: photo,
-short bio, social links, news, selected work, and an experience timeline.
-No build tools, no frameworks, nothing to install — just HTML and CSS you
-edit directly, hosted for free on GitHub Pages under your own domain.
+**Live site: https://tristanreimann.github.io/**
+
+A single-page personal homepage modelled on the classic academic
+homepage template (Lato font, blue/orange links, thumbnail-left /
+text-right rows): circular photo, short bio, social links, selected
+work, and an experience list. No build tools, no frameworks, nothing
+to install — just HTML and CSS you edit directly, hosted for free on
+GitHub Pages under your own domain.
 
 ## Folder structure
 
 ```
 .
-├── index.html          The whole site (one page, five sections)
+├── index.html          The whole site (one page, three sections)
 ├── 404.html            Shown automatically for URLs that don't exist
 ├── css/
 │   └── style.css       The single stylesheet, organised by section
 ├── js/                 Empty — for scripts if you ever need them
 ├── assets/
-│   ├── images/         Your portrait, project thumbnails, favicon
+│   ├── images/         Your portrait, project thumbnails, favicon,
+│   │                   and institution/employer logos for Experience
 │   └── files/          Downloads, e.g. cv.pdf
 └── README.md           This file
 ```
@@ -44,8 +49,8 @@ edit directly, hosted for free on GitHub Pages under your own domain.
 
 ## Growing the site later
 
-- **More entries** in News, Selected work, or Experience: copy-paste one
-  existing `<li>` / `<article>` block and edit it.
+- **More entries** in Selected work or Experience: copy-paste one
+  existing `<div class="entry-row">` block and edit it.
 - **A whole new section**: duplicate any `<section>` in `index.html`,
   give it a new `id` and `<h2>` — the section styling is generic.
 - **A separate page** (e.g. `photos.html`): copy `index.html`, keep the
